@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --blue: #08f;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Helvetica", "Arial", sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "EB Garamond", serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1240px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+            180deg,
+            rgba(0, 136, 255, 0.2) 0%,
+            rgba(255, 255, 255, 1) 100%
+        ),
+        url("images/hero-background.png");
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(1px);
+    z-index: 0;
+}
+
+.hero .container,
+.hero .scroll-indicator {
+    position: relative;
+    z-index: 1;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 150px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.highlight {
+    color: var(--blue);
+}
+
+.tagline {
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.scroll-indicator {
+    color: var(--blue);
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.scroll-indicator svg {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Feature Sections */
+.feature-section {
+    padding: 100px 0;
+}
+
+.section-header {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 400;
+    margin: 0;
+    color: #1a1a1a;
+    flex: 1;
+}
+
+.highlight-italic {
+    color: var(--blue);
+    font-style: italic;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+    margin-top: 15px;
+    padding-top: 5px;
+    flex: 1;
+}
+
+.feature-image {
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #d7ecff 0%, #65b7ff 100%);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Section */
+.team-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.team-member {
+    text-align: left;
+}
+
+.member-name {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.member-role {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.member-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.member-link:hover {
+    color: #357ab8;
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(250, 253, 255, 0.5) 100%
+        ),
+        url("images/waves.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(1px);
+    z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 72px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        min-width: auto;
+    }
+
+    .section-description {
+        font-size: 14px;
+        margin-top: 0;
+    }
+
+    .feature-section {
+        padding: 30px 0;
+    }
+
+    .feature-image {
+        padding: 20px;
+    }
+
+    .team-section {
+        padding: 50px 0;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .member-name {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    .member-role {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .member-link {
+        font-size: 14px;
+    }
+
+    .footer {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 52px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .footer {
+        height: 80px;
+    }
+}
